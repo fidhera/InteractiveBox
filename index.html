@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Box</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            transition: all .5s ease;
+        }
+
+        .container {
+            height: 100vh;
+            background: #c4c4c4;
+            display: grid;
+            place-content: center;
+            gap: .7rem;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(38, 38, 38);
+            box-shadow: 0px 0px 8px 1px  #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            transition: all 0.3s ease;
+            border-radius: 10px ;
+        }
+
+        .input {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid rgb(38, 38, 38);
+            box-shadow: 0px 0px 8px 1px  #000000;
+            border-radius: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <input type="text" class="input" placeholder="input" name="" id="">
+    </div>
+    
+    <script>
+        let box = document.querySelector(".box");
+        let input = document.querySelector(".input");
+
+        input.addEventListener("input", () => {
+            let value = input.value;
+
+            box.style.borderRadius = value;
+            box.style.background = value;
+            box.style.borderColor = value;
+
+            if (value === "pp") {
+                box.style.setProperty("background-image", "url('blank-avatar.jpg')");
+                box.style.setProperty("background-size", "cover");
+                box.style.setProperty("background-position", "center");
+            } else {
+                box.style.setProperty("background-image", "none");
+            }
+
+            // Additional styles for more dynamic effects
+            box.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+            box.style.color = "#000";
+            box.style.textAlign = "center";
+            box.style.lineHeight = "200px";
+            box.style.fontSize = "18px";
+
+            // Resetting to default styles if input is empty
+            if (value === "") {
+                box.style.borderRadius = "0";
+                box.style.backgroundColor = "lightgray";
+                box.style.borderColor = "black";
+                box.style.boxShadow = "none";
+                box.style.color = "#000";
+            }
+        });
+    </script>
+</body>
+</html>
