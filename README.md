@@ -1,6 +1,6 @@
 # Interactive Box Manipulator
 
-![Tampilan Interactive Box](https://fidhera.github.io/InteractiveBox/)
+[Tampilan Interactive Box](https://fidhera.github.io/InteractiveBox/)
 Proyek web sederhana yang memungkinkan pengguna untuk mengubah tampilan kotak secara interaktif berdasarkan input yang dimasukkan. Proyek ini dibuat dengan HTML, CSS, dan JavaScript untuk mendemonstrasikan manipulasi DOM secara real-time.
 
 ---
